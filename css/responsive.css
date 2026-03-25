@@ -1,0 +1,14 @@
+@media (max-width: 768px) {
+    .hero-container{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-title{
+        font-size: 32px;
+    }
+
+    .hero-buttons{
+        justify-content: center;
+    }
+}
