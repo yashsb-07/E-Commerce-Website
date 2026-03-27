@@ -55,6 +55,7 @@
 .btn-outline{
     background: transparent;
     border: 2px solid var(--accent);
+    color: var(--text);
 }
 
 .btn-outline:hover {
