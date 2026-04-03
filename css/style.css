@@ -59,7 +59,7 @@ h1, h2, h3 {
 
 /* Banner */
 .banner{
-    background-image: url(/images/banners/sale-banner1.jpg);
+    background-image: url(/images/banners/sale-banner1.jpg  );
     height: 350px;
     background-size: cover;
     background-position: center;

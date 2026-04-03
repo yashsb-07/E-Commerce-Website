@@ -150,3 +150,20 @@
 .product-card .btn{
     width: 100%;
 }
+
+/* New Arrivals Section */
+.new-arrivals{
+    background: #ffffff;
+}
+/* Arrivals Grid */
+.arrivals-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+/* New Badge Color */
+.badge .new{
+    background: var(--accent);
+}
+
