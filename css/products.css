@@ -167,3 +167,57 @@
     background: var(--accent);
 }
 
+/* Testimonials Section */
+.testimonials {
+    background: #F8FAFC;
+}
+
+/* Grid */
+.testimonial-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* Card */
+.testimonial-card {
+    background: #ffffff;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+/* User Image */
+.user-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* Review Text */
+.review {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 15px;
+}
+
+/* Rating */
+.rating {
+    color: #f59e0b;
+    margin-bottom: 10px;
+}
+
+/* User Name */
+.user-name {
+    font-size: 16px;
+    font-weight: 600;
+}
+
