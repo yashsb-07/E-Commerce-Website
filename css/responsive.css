@@ -80,3 +80,14 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* Newsletter */
+@media (max-width: 576px) {
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form .btn {
+        width: 100%;
+    }
+}
