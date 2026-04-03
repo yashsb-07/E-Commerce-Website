@@ -7,7 +7,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- CSS Files -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
@@ -37,9 +37,16 @@
 
             <!-- Right Side Icons-->
             <div class="nav-icons">
-                <input type="text" placeholder="search.." class="search-box">
-                <a href="cart.html">Cart</a>
-                <a href="login.html">Login</a>
+                <div class="search-icon">
+                    <i class="fa fa-search"></i>
+                </div>
+                <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+                <a href="login.html"><i class="fa fa-user"></i></a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="menu-toggle">
+                <i class="fa fa-bars"></i>
             </div>
         
         </div>
@@ -405,5 +412,6 @@
         </div>
     </footer>
 
+    <script src="js/main.js"></script>
 </body>
 </html>

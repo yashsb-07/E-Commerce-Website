@@ -25,6 +25,103 @@ body {
     color: var(--text);
 }
 
+/* Global CSS */
+section {
+    padding: 60px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.product-card {
+    padding-bottom: 15px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 16px;
+    color: var(--muted);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Button Hover */
+.btn {
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Card Hover */
+.product-card,
+.category-card,
+.testimonial-card {
+    transition: 0.3s;
+}
+
+/* Image Zoom */
+.product-card:hover img,
+.category-card:hover img {
+    transform: scale(1.05);
+    border-radius: 10px;
+}
+
+/* Link Hover */
+.nav-menu a:hover {
+    color: var(--accent);
+}
+
+.nav-icons i {
+    font-size: 18px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.nav-icons i:hover {
+    color: var(--accent);
+}
+
+/* Global CSS */
+
+/* Menu toggle */
+.menu-toggle {
+    display: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
 /* Container */
 .container {
     width: 90%;
