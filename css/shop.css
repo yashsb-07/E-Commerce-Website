@@ -22,6 +22,7 @@
     gap: 30px;
     padding: 40px 0;
     align-items: flex-start;
+    background: #f8fafc;
 }
 
 /* SIDEBAR */
@@ -36,6 +37,8 @@
 .sidebar h3 {
     font-size: 18px;
     margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
 }
 
 .sidebar ul {
@@ -48,10 +51,18 @@
     color: var(--muted);
     cursor: pointer;
     transition: 0.3s;
+    padding: 6px 0;
+    transition: 0.3s;
 }
 
 .sidebar li:hover {
     color: var(--accent);
+    padding-left: 8px;
+}
+
+.sidebar li.active {
+    color: var(--accent);
+    font-weight: 600;
 }
 
 /* PRODUCTS AREA */
@@ -75,10 +86,14 @@
     border-radius: 8px;
     outline: none;
     font-size: 14px;
+    background: #f9fafb;
+    transition: 0.3s;
 }
 
 .products-top input:focus {
     border-color: var(--accent);
+    background: #fff;
+    box-shadow: 0 0 0 2px rgba(59,130,246,0.2);
 }
 
 .products-top select {
@@ -87,4 +102,10 @@
     border-radius: 8px;
     font-size: 14px;
     cursor: pointer;
+    background: #f9fafb;
+    transition: 0.3s;
+}
+
+.products-top select:hover {
+    border-color: var(--accent);
 }
