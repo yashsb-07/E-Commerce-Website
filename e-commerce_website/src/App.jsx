@@ -8,6 +8,7 @@ import FeaturedProducts from "./components/home/FeaturedProducts/FeaturedProduct
 import Banner from "./components/home/Banner/Banner";
 import NewArrivals from "./components/home/NewArrivals/NewArrivals";
 import Testimonials from "./components/home/Testimonials/Testimonials";
+import Newsletter from "./components/home/Newsletter/Newsletter";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Banner />
         <NewArrivals />
         <Testimonials />
+        <Newsletter />
       </main>
 
       <Footer />
