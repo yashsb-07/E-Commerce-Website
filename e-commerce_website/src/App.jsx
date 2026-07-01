@@ -4,6 +4,7 @@ import Button from "./components/common/Button/Button";
 import ProductCard from "./components/common/ProductCard/ProductCard";
 import Hero from "./components/home/Hero/Hero";
 import Categories from "./components/home/Categories/Categories";
+import FeaturedProducts from "./components/home/FeaturedProducts/FeaturedProducts";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <main className="main-content">
         <Hero />
         <Categories />
+        <FeaturedProducts />
       </main>
 
       <Footer />
