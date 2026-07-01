@@ -18,6 +18,8 @@ export const featuredProducts = [
     oldPrice: "₹1,67,999",
     badge: "Sale",
     discount: "17%",
+    category: "Electronics",
+    stock: true,
   },
   {
     id: 2,
@@ -29,6 +31,8 @@ export const featuredProducts = [
     oldPrice: "₹64,874",
     badge: "Sale",
     discount: "12%",
+    category: "Electronics",
+    stock: true,
   },
   {
     id: 3,
@@ -51,6 +55,8 @@ export const featuredProducts = [
     oldPrice: "₹14,999",
     badge: "Sale",
     discount: "20%",
+    category: "Electronics",
+    stock: true,
   },
 ];
 
@@ -64,6 +70,8 @@ export const newArrivals = [
     newPrice: "₹71,999",
     badge: "New",
     discount: "10%",
+    category: "Electronics",
+    stock: true,    
   },
   {
     id: 6,
@@ -74,6 +82,8 @@ export const newArrivals = [
     newPrice: "₹1,59,999",
     badge: "New",
     discount: "15%",
+    category: "Electronics",
+    stock: true,
   },
   {
     id: 7,
@@ -94,5 +104,7 @@ export const newArrivals = [
     newPrice: "₹2,59,990",
     badge: "New",
     discount: "18%",
+    category: "Electronics",
+    stock: true,
   },
 ];
