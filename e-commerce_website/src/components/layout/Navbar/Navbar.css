@@ -1,0 +1,55 @@
+.navbar {
+  width: 100%;
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+  padding: 18px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 1.2rem;
+  align-items: center;
+}
+
+.nav-icons svg {
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.nav-icons svg:hover {
+  color: var(--accent);
+}
+
+.menu-toggle {
+  display: none;
+}

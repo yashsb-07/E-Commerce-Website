@@ -1,0 +1,28 @@
+.btn {
+  padding: 12px 24px;
+  margin: 5px;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--text);
+}
+
+.btn-outline:hover {
+  background: var(--accent);
+  color: white;
+}
