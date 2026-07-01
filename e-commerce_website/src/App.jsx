@@ -5,6 +5,7 @@ import ProductCard from "./components/common/ProductCard/ProductCard";
 import Hero from "./components/home/Hero/Hero";
 import Categories from "./components/home/Categories/Categories";
 import FeaturedProducts from "./components/home/FeaturedProducts/FeaturedProducts";
+import Banner from "./components/home/Banner/Banner";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Hero />
         <Categories />
         <FeaturedProducts />
+        <Banner />
       </main>
 
       <Footer />

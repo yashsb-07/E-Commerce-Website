@@ -1,0 +1,49 @@
+.banner {
+  background-image: url("../../../assets/images/banners/sale-banner1.jpg");
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.banner-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-content {
+  text-align: center;
+  color: white;
+}
+
+.banner-content h2 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 40px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.banner-content p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #e2e8f0;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    height: 250px;
+  }
+
+  .banner-content h2 {
+    font-size: 28px;
+  }
+
+  .banner-content p {
+    font-size: 16px;
+  }
+}
