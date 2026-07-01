@@ -6,6 +6,7 @@ import Hero from "./components/home/Hero/Hero";
 import Categories from "./components/home/Categories/Categories";
 import FeaturedProducts from "./components/home/FeaturedProducts/FeaturedProducts";
 import Banner from "./components/home/Banner/Banner";
+import NewArrivals from "./components/home/NewArrivals/NewArrivals";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Categories />
         <FeaturedProducts />
         <Banner />
+        <NewArrivals />
       </main>
 
       <Footer />
