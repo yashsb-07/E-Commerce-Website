@@ -56,3 +56,7 @@ img {
   display: flex;
   gap: 30px;
 }
+
+.shop-content {
+  flex: 1;
+}
