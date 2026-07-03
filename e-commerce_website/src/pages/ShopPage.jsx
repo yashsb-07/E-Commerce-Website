@@ -11,10 +11,31 @@ function ShopPage() {
   const allProducts = [...featuredProducts, ...newArrivals];
 
   const [searchTerm, setSearchTerm] = useState("");
+  const [sortOption, setSortOption] = useState("default");
 
-  const filteredProducts = allProducts.filter((product) =>
+  let filteredProducts = allProducts.filter((product) =>
     product.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  if (sortOption === "low-high") {
+    filteredProducts.sort(
+      (a, b) =>
+        parseInt(a.newPrice.replace(/[₹,]/g, "")) -
+        parseInt(b.newPrice.replace(/[₹,]/g, ""))
+    );
+  }
+
+  if (sortOption === "high-low") {
+    filteredProducts.sort(
+      (a, b) =>
+        parseInt(b.newPrice.replace(/[₹,]/g, "")) -
+        parseInt(a.newPrice.replace(/[₹,]/g, ""))
+    );
+  }
+
+  if (sortOption === "newest") {
+    filteredProducts.sort((a, b) => b.id - a.id);
+  }
 
   return (
     <>
@@ -28,6 +49,8 @@ function ShopPage() {
             <ShopToolbar
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
+              sortOption={sortOption}
+              setSortOption={setSortOption}
             />
 
             <ProductGrid products={filteredProducts} />

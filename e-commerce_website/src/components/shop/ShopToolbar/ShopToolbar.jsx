@@ -1,6 +1,11 @@
 import "./ShopToolbar.css";
 
-function ShopToolbar({ searchTerm, setSearchTerm }) {
+function ShopToolbar({
+  searchTerm,
+  setSearchTerm,
+  sortOption,
+  setSortOption,
+}) {
   return (
     <div className="shop-toolbar">
       <input
@@ -11,11 +16,11 @@ function ShopToolbar({ searchTerm, setSearchTerm }) {
         onChange={(e) => setSearchTerm(e.target.value)}
       />
 
-      <select className="shop-sort">
-        <option>Default Sorting</option>
-        <option>Price: Low to High</option>
-        <option>Price: High to Low</option>
-        <option>Newest</option>
+      <select className="shop-sort" value={sortOption} onChange={(e) => setSortOption(e.target.value)} >
+        <option value="default">Default Sorting</option>
+        <option value="low-high">Price: Low to High</option>
+        <option value="high-low">Price: High to Low</option>
+        <option value="newest">Newest</option>
       </select>
     </div>
   );
