@@ -1,15 +1,9 @@
 import Navbar from "./components/layout/Navbar/Navbar";
 import Footer from "./components/layout/Footer/Footer";
-import Button from "./components/common/Button/Button";
-import ProductCard from "./components/common/ProductCard/ProductCard";
-import Hero from "./components/home/Hero/Hero";
-import Categories from "./components/home/Categories/Categories";
-import FeaturedProducts from "./components/home/FeaturedProducts/FeaturedProducts";
-import Banner from "./components/home/Banner/Banner";
-import NewArrivals from "./components/home/NewArrivals/NewArrivals";
-import Testimonials from "./components/home/Testimonials/Testimonials";
-import Newsletter from "./components/home/Newsletter/Newsletter";
+import { Routes, Route } from "react-router-dom";
 
+import HomePage from "./pages/HomePage";
+import ShopPage from "./pages/ShopPage";
 
 function App() {
   return (
@@ -17,13 +11,10 @@ function App() {
       <Navbar />
 
       <main className="main-content">
-        <Hero />
-        <Categories />
-        <FeaturedProducts />
-        <Banner />
-        <NewArrivals />
-        <Testimonials />
-        <Newsletter />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/shop" element={<ShopPage />} />
+        </Routes>
       </main>
 
       <Footer />

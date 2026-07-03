@@ -1,0 +1,35 @@
+.filter-sidebar {
+  width: 260px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  height: fit-content;
+}
+
+.filter-section {
+  margin-bottom: 30px;
+}
+
+.filter-section h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.filter-section ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filter-section li {
+  cursor: pointer;
+  color: var(--muted);
+  transition: 0.3s;
+}
+
+.filter-section li:hover {
+  color: var(--accent);
+  transform: translateX(5px);
+}
