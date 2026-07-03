@@ -33,3 +33,8 @@
   color: var(--accent);
   transform: translateX(5px);
 }
+
+.active-filter {
+  color: var(--accent);
+  font-weight: 600;
+}

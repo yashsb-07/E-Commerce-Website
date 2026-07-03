@@ -96,7 +96,7 @@ export const newArrivals = [
     newPrice: "₹978",
     badge: "New",
     discount: "20%",
-    category: "Clothes",
+    category: "Men",
     stock: true,
   },
   {

@@ -12,10 +12,19 @@ function ShopPage() {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("default");
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
-  let filteredProducts = allProducts.filter((product) =>
-    product.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  let filteredProducts = allProducts.filter((product) => {
+    const matchesCategory =
+      selectedCategory === "All" ||
+      product.category === selectedCategory;
+
+    const matchesSearch = product.title
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+
+    return matchesCategory && matchesSearch;
+  });
 
   if (sortOption === "low-high") {
     filteredProducts.sort(
@@ -43,7 +52,10 @@ function ShopPage() {
 
       <section className="shop-main">
         <div className="container shop-container">
-          <FilterSidebar />
+          <FilterSidebar
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
 
           <div className="shop-content">
             <ShopToolbar

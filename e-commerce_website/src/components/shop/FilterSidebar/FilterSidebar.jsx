@@ -1,6 +1,18 @@
 import "./FilterSidebar.css";
 
-function FilterSidebar() {
+const categories = [
+  "All",
+  "Men",
+  "Women",
+  "Electronics",
+  "Shoes",
+  "Accessories",
+];
+
+function FilterSidebar({
+  selectedCategory,
+  setSelectedCategory,
+}) {
   return (
     <aside className="filter-sidebar">
 
@@ -9,10 +21,17 @@ function FilterSidebar() {
         <h3>Categories</h3>
 
         <ul>
-          <li>Men</li>
-          <li>Women</li>
-          <li>Kids</li>
-          <li>Accessories</li>
+          {categories.map((category) => (
+            <li
+              key={category}
+              className={
+                selectedCategory === category ? "active-filter" : ""
+              }
+              onClick={() => setSelectedCategory(category)}
+            >
+              {category}
+            </li>
+          ))}
         </ul>
       </div>
 
