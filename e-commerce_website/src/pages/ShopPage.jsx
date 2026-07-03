@@ -13,17 +13,36 @@ function ShopPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("default");
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedPriceRange, setSelectedPriceRange] = useState("All");
 
   let filteredProducts = allProducts.filter((product) => {
+    const productPrice = parseInt(
+      product.newPrice.replace(/[₹,]/g, "")
+    );
+
     const matchesCategory =
       selectedCategory === "All" ||
       product.category === selectedCategory;
+
+    let matchesPrice = true;
+
+    if (selectedPriceRange === "0-500") {
+      matchesPrice = productPrice >= 0 && productPrice <= 500;
+    }
+
+    if (selectedPriceRange === "500-1000") {
+      matchesPrice = productPrice > 500 && productPrice <= 1000;
+    }
+
+    if (selectedPriceRange === "1000+") {
+      matchesPrice = productPrice > 1000;
+    }
 
     const matchesSearch = product.title
       .toLowerCase()
       .includes(searchTerm.toLowerCase());
 
-    return matchesCategory && matchesSearch;
+    return matchesCategory && matchesPrice && matchesSearch;
   });
 
   if (sortOption === "low-high") {
@@ -55,6 +74,8 @@ function ShopPage() {
           <FilterSidebar
             selectedCategory={selectedCategory}
             setSelectedCategory={setSelectedCategory}
+            selectedPriceRange={selectedPriceRange}
+            setSelectedPriceRange={setSelectedPriceRange}
           />
 
           <div className="shop-content">
