@@ -44,6 +44,8 @@ export const featuredProducts = [
     oldPrice: "₹1,599",
     badge: "Sale",
     discount: "37%",
+    category: "Shoes",
+    stock: true,
   },
   {
     id: 4,
@@ -94,6 +96,8 @@ export const newArrivals = [
     newPrice: "₹978",
     badge: "New",
     discount: "20%",
+    category: "Clothes",
+    stock: true,
   },
   {
     id: 8,

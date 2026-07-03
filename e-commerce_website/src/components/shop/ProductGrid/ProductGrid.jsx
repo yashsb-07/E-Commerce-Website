@@ -1,13 +1,10 @@
 import "./ProductGrid.css";
 import ProductCard from "../../common/ProductCard/ProductCard";
-import { featuredProducts, newArrivals } from "../../../data/products";
 
-function ProductGrid() {
-  const allProducts = [...featuredProducts, ...newArrivals];
-
+function ProductGrid({ products }) {
   return (
     <div className="shop-products-grid">
-      {allProducts.map((product) => (
+      {products.map((product) => (
         <ProductCard
           key={product.id}
           image={product.image}

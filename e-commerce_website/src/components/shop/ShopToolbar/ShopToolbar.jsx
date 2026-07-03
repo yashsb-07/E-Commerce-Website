@@ -1,12 +1,14 @@
 import "./ShopToolbar.css";
 
-function ShopToolbar() {
+function ShopToolbar({ searchTerm, setSearchTerm }) {
   return (
     <div className="shop-toolbar">
       <input
         type="text"
         placeholder="Search products..."
         className="shop-search"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
       />
 
       <select className="shop-sort">
