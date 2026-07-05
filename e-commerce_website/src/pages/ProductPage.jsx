@@ -22,9 +22,9 @@ function ProductPage() {
 
   return (
     <>
-      <ProductBreadcrumb />
+      <ProductBreadcrumb product={product} />
       <ProductDetails product={product} />
-      <ProductDescription />
+      <ProductDescription product={product} />
       <RelatedProducts />
     </>
   );

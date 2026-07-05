@@ -1,57 +1,55 @@
 import "./ProductDescription.css";
 
-function ProductDescription() {
+function ProductDescription({ product }) {
   return (
     <section className="product-description-section">
       <div className="container">
-
         <div className="description-card">
 
-          <h2>Product Description</h2>
+          <h2>About {product.title}</h2>
 
           <p>
-            The Apple iPhone 17 Pro Max is designed for users who demand the
-            best. With a premium titanium body, A19 Bionic chip, advanced
-            camera system, and all-day battery life, it delivers flagship
-            performance like never before.
+            {product.title} is one of our premium {product.category} products,
+            designed to deliver high performance, reliability, and a premium
+            user experience.
           </p>
 
           <h3>Key Features</h3>
 
           <ul>
-            <li>6.9-inch Super Retina XDR Display</li>
-            <li>A19 Bionic Processor</li>
-            <li>48MP Triple Camera Setup</li>
-            <li>512GB Internal Storage</li>
-            <li>5G Connectivity</li>
-            <li>Face ID Security</li>
+            <li>Premium quality build</li>
+            <li>Modern design and performance</li>
+            <li>High durability</li>
+            <li>Latest technology integration</li>
+            <li>Trusted by thousands of customers</li>
           </ul>
 
           <h3>Specifications</h3>
 
           <div className="specs-grid">
             <div>
-              <strong>Brand:</strong> Apple
+              <strong>Category:</strong> {product.category}
             </div>
 
             <div>
-              <strong>Model:</strong> iPhone 17 Pro Max
+              <strong>Stock:</strong>{" "}
+              {product.stock ? "Available" : "Out of Stock"}
             </div>
 
             <div>
-              <strong>Storage:</strong> 512GB
+              <strong>Rating:</strong> {product.rating}
             </div>
 
             <div>
-              <strong>Color:</strong> Cosmic Orange
+              <strong>Reviews:</strong> {product.reviews}
             </div>
 
             <div>
-              <strong>Battery:</strong> 5000mAh
+              <strong>Price:</strong> {product.newPrice}
             </div>
 
             <div>
-              <strong>Network:</strong> 5G
+              <strong>Discount:</strong> {product.discount}
             </div>
           </div>
 
