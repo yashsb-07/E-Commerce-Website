@@ -1,8 +1,17 @@
 import "./ProductDetails.css";
 import Button from "../../common/Button/Button";
 import { FaStar, FaRegStar } from "react-icons/fa";
+import { useState, useEffect } from "react";
 
 function ProductDetails({ product }) {
+  const [selectedImage, setSelectedImage] = useState(
+    product.images[0]
+  );
+
+  useEffect(() => {
+    setSelectedImage(product.images[0]);
+  }, [product]);
+
   const rating = Math.floor(product.rating);
   const fullStars = rating;
   const emptyStars = 5 - fullStars;
@@ -13,7 +22,27 @@ function ProductDetails({ product }) {
 
         {/* Left Side */}
         <div className="product-image-section">
-          <img src={product.image} alt={product.title} />
+
+          {/* Main Image */}
+          <div className="main-product-image">
+            <img src={selectedImage} alt={product.title} />
+          </div>
+
+          {/* Thumbnails */}
+          <div className="thumbnail-gallery">
+            {product.images.map((img, index) => (
+              <img
+                key={index}
+                src={img}
+                alt={product.title}
+                className={`thumbnail ${
+                  selectedImage === img ? "active-thumbnail" : ""
+                }`}
+                onClick={() => setSelectedImage(img)}
+              />
+            ))}
+          </div>
+
         </div>
 
         {/* Right Side */}
@@ -21,11 +50,8 @@ function ProductDetails({ product }) {
 
           <p className="product-category">{product.category}</p>
 
-          <h1 className="product-title">
-            {product.title}
-          </h1>
+          <h1 className="product-title">{product.title}</h1>
 
-          {/* Rating */}
           <div className="product-rating">
             <div className="stars">
               {[...Array(fullStars)].map((_, index) => (
@@ -42,7 +68,6 @@ function ProductDetails({ product }) {
             </span>
           </div>
 
-          {/* Price */}
           <div className="product-price">
             <span className="new-price">{product.newPrice}</span>
 
@@ -63,19 +88,16 @@ function ProductDetails({ product }) {
             {product.stock ? "In Stock" : "Out of Stock"}
           </p>
 
-          {/* Description */}
           <p className="product-description">
             Premium product from our latest collection.
           </p>
 
-          {/* Quantity */}
           <div className="quantity-selector">
             <button>-</button>
             <span>1</span>
             <button>+</button>
           </div>
 
-          {/* Buttons */}
           <div className="product-buttons">
             <Button text="Add to Cart" />
             <Button text="Buy Now" className="btn-outline" />

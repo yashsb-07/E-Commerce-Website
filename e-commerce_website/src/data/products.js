@@ -11,6 +11,7 @@ export const featuredProducts = [
   {
     id: 1,
     image: phoneImage,
+    images: [phoneImage, phoneImage, phoneImage],
     title: "Apple iPhone 17 Pro (Cosmic Orange, 512GB)",
     rating: "4.5",
     reviews: "1245",
@@ -24,6 +25,7 @@ export const featuredProducts = [
   {
     id: 2,
     image: laptopImage,
+    images: [laptopImage, laptopImage, laptopImage],
     title: "AeroBook Intel Core i5 13th Gen Laptop",
     rating: "4.3",
     reviews: "824",
@@ -37,6 +39,7 @@ export const featuredProducts = [
   {
     id: 3,
     image: shoesImage,
+    images: [shoesImage, shoesImage, shoesImage],
     title: "HRX Running Shoes For Men",
     rating: "4.4",
     reviews: "642",
@@ -50,6 +53,7 @@ export const featuredProducts = [
   {
     id: 4,
     image: speakerImage,
+    images: [speakerImage, speakerImage, speakerImage],
     title: "JBL SB510 Bluetooth Tower Speaker",
     rating: "4.1",
     reviews: "411",
@@ -66,6 +70,7 @@ export const newArrivals = [
   {
     id: 5,
     image: gamingLaptopImage,
+    images: [gamingLaptopImage, gamingLaptopImage, gamingLaptopImage],
     title: "ASUS TUF Gaming A15 Ryzen 7 Gaming Laptop",
     rating: "4.8",
     reviews: "920",
@@ -78,6 +83,7 @@ export const newArrivals = [
   {
     id: 6,
     image: s26Image,
+    images: [s26Image, s26Image, s26Image],
     title: "Samsung Galaxy S26 Ultra 5G (512GB)",
     rating: "4.7",
     reviews: "1401",
@@ -90,6 +96,7 @@ export const newArrivals = [
   {
     id: 7,
     image: jacketImage,
+    images: [jacketImage, jacketImage, jacketImage],
     title: "HRX Men Solid Bomber Jacket",
     rating: "4.4",
     reviews: "512",
@@ -102,6 +109,7 @@ export const newArrivals = [
   {
     id: 8,
     image: tvImage,
+    images: [tvImage, tvImage, tvImage],
     title: "Samsung QN900D 85-inch 8K Smart TV",
     rating: "4.9",
     reviews: "234",
