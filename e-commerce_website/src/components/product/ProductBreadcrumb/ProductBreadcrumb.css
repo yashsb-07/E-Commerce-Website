@@ -1,0 +1,15 @@
+.product-breadcrumb {
+  padding: 25px 0;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
+}
+
+.product-breadcrumb p {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.product-breadcrumb span {
+  color: var(--accent);
+  font-weight: 500;
+}

@@ -1,5 +1,11 @@
-function HomePage() {
-  return <h1>Home Page</h1>;
+import ProductBreadcrumb from "../components/product/ProductBreadcrumb/ProductBreadcrumb";
+
+function ProductPage() {
+  return (
+    <>
+      <ProductBreadcrumb />
+    </>
+  );
 }
 
-export default HomePage;
+export default ProductPage;
