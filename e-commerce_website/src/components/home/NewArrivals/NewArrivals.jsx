@@ -15,6 +15,7 @@ function NewArrivals() {
         <div className="arrivals-grid">
           {newArrivals.map((product) => (
             <ProductCard
+              id={product.id}
               key={product.id}
               image={product.image}
               title={product.title}

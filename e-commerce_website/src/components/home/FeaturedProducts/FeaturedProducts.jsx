@@ -15,6 +15,7 @@ function FeaturedProducts() {
         <div className="products-grid">
           {featuredProducts.map((product) => (
             <ProductCard
+              id={product.id}
               key={product.id}
               image={product.image}
               title={product.title}

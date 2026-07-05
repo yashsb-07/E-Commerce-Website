@@ -15,6 +15,7 @@ function RelatedProducts() {
         <div className="related-products-grid">
           {featuredProducts.slice(0, 4).map((product) => (
             <ProductCard
+              id={product.id} 
               key={product.id}
               image={product.image}
               title={product.title}

@@ -21,6 +21,7 @@ function ProductGrid({ products }) {
         <div className="shop-products-grid">
           {products.map((product) => (
             <ProductCard
+              id={product.id}
               key={product.id}
               image={product.image}
               title={product.title}

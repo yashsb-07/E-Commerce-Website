@@ -1,5 +1,6 @@
 import "./ProductCard.css";
 import Button from "../Button/Button";
+import { useNavigate } from "react-router-dom";
 import {
   FaHeart,
   FaEye,
@@ -8,6 +9,7 @@ import {
 } from "react-icons/fa";
 
 function ProductCard({
+  id,
   image,
   title,
   category,
@@ -21,9 +23,10 @@ function ProductCard({
 }) {
   const fullStars = Math.floor(rating);
   const emptyStars = 5 - fullStars;
+  const navigate = useNavigate();
 
   return (
-    <div className="product-card">
+    <div className="product-card" onClick={() => navigate(`/product/${id}`)}>
 
       {/* Image Section */}
       <div className="product-img-container">
