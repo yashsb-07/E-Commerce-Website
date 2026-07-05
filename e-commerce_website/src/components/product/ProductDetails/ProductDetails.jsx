@@ -2,9 +2,9 @@ import "./ProductDetails.css";
 import Button from "../../common/Button/Button";
 import { FaStar, FaRegStar } from "react-icons/fa";
 
-function ProductDetails() {
-  const rating = 4;
-  const fullStars = Math.floor(rating);
+function ProductDetails({ product }) {
+  const rating = Math.floor(product.rating);
+  const fullStars = rating;
   const emptyStars = 5 - fullStars;
 
   return (
@@ -13,19 +13,16 @@ function ProductDetails() {
 
         {/* Left Side */}
         <div className="product-image-section">
-          <img
-            src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"
-            alt="Product"
-          />
+          <img src={product.image} alt={product.title} />
         </div>
 
         {/* Right Side */}
         <div className="product-info-section">
 
-          <p className="product-category">Electronics</p>
+          <p className="product-category">{product.category}</p>
 
           <h1 className="product-title">
-            Apple iPhone 17 Pro Max (Cosmic Orange, 512GB)
+            {product.title}
           </h1>
 
           {/* Rating */}
@@ -40,23 +37,35 @@ function ProductDetails() {
               ))}
             </div>
 
-            <span>4.0 (1245 reviews)</span>
+            <span>
+              {product.rating} ({product.reviews} reviews)
+            </span>
           </div>
 
           {/* Price */}
           <div className="product-price">
-            <span className="new-price">₹1,39,599</span>
-            <span className="old-price">₹1,67,999</span>
+            <span className="new-price">{product.newPrice}</span>
+
+            {product.oldPrice && (
+              <span className="old-price">{product.oldPrice}</span>
+            )}
           </div>
 
-          <p className="discount-text">17% OFF</p>
+          <p className="discount-text">
+            {product.discount} OFF
+          </p>
 
-          <p className="stock-status in-stock">In Stock</p>
+          <p
+            className={`stock-status ${
+              product.stock ? "in-stock" : "out-stock"
+            }`}
+          >
+            {product.stock ? "In Stock" : "Out of Stock"}
+          </p>
 
           {/* Description */}
           <p className="product-description">
-            Experience the latest Apple flagship with stunning performance,
-            premium build quality, and an advanced camera system.
+            Premium product from our latest collection.
           </p>
 
           {/* Quantity */}

@@ -26,7 +26,7 @@ function ProductCard({
   const navigate = useNavigate();
 
   return (
-    <div className="product-card" onClick={() => navigate(`/product/${id}`)}>
+    <div className="product-card" onClick={() => navigate(`/shop/product/${id}`)}>
 
       {/* Image Section */}
       <div className="product-img-container">
