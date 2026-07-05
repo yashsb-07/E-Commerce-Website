@@ -1,0 +1,29 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.page-btn {
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.page-btn:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.active-page {
+  background: var(--accent);
+  color: white;
+}
+
+.next-btn {
+  font-weight: 600;
+}

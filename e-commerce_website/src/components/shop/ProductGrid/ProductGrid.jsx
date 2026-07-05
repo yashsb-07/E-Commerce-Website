@@ -1,5 +1,6 @@
 import "./ProductGrid.css";
 import ProductCard from "../../common/ProductCard/ProductCard";
+import Pagination from "../Pagination/Pagination";
 
 function ProductGrid({ products }) {
   return (
@@ -34,7 +35,11 @@ function ProductGrid({ products }) {
             />
           ))}
         </div>
+
+        
       )}
+
+      <Pagination />
     </>
   );
 }
