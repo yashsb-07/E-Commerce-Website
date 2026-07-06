@@ -8,8 +8,11 @@ function ProductDetails({ product }) {
     product.images[0]
   );
 
+  const [quantity, setQuantity] = useState(1);
+
   useEffect(() => {
     setSelectedImage(product.images[0]);
+    setQuantity(1);
   }, [product]);
 
   const rating = Math.floor(product.rating);
@@ -93,9 +96,25 @@ function ProductDetails({ product }) {
           </p>
 
           <div className="quantity-selector">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+
+            <button
+              onClick={() =>
+                setQuantity((prev) => Math.max(1, prev - 1))
+              }
+            >
+              -
+            </button>
+
+            <span>{quantity}</span>
+
+            <button
+              onClick={() =>
+                setQuantity((prev) => prev + 1)
+              }
+            >
+              +
+            </button>
+
           </div>
 
           <div className="product-buttons">
