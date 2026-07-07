@@ -59,8 +59,20 @@ export function cartReducer(state, action) {
       );
     }
 
-    case CART_ACTIONS.DECREASE_QUANTITY:
-      return state;
+    case CART_ACTIONS.DECREASE_QUANTITY: {
+      const productId = action.payload;
+
+      return state
+        .map((item) =>
+          item.id === productId
+            ? {
+                ...item,
+                quantity: item.quantity - 1,
+              }
+            : item
+        )
+        .filter((item) => item.quantity > 0);
+    }
 
     case CART_ACTIONS.CLEAR_CART:
       return [];
