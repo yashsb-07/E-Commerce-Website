@@ -38,8 +38,13 @@ export function cartReducer(state, action) {
         ];
         }
 
-    case CART_ACTIONS.REMOVE_FROM_CART:
-      return state;
+    case CART_ACTIONS.REMOVE_FROM_CART: {
+      const productId = action.payload;
+
+      return state.filter(
+        (item) => item.id !== productId
+      );
+    }
 
     case CART_ACTIONS.INCREASE_QUANTITY:
       return state;
