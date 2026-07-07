@@ -5,13 +5,13 @@ import ProductDetails from "../components/product/ProductDetails/ProductDetails"
 import ProductDescription from "../components/product/ProductDescription/ProductDescription";
 import RelatedProducts from "../components/product/RelatedProducts/RelatedProducts";
 
-import { featuredProducts, newArrivals } from "../data/products";
+import { products } from "../data/products";
 
 function ProductPage() {
   const { id } = useParams();
 
-  const allProducts = [...featuredProducts, ...newArrivals];
-
+  const allProducts = products;
+  
   const product = allProducts.find(
     (item) => item.id === Number(id)
   );

@@ -1,5 +1,6 @@
 import "./ProductDetails.css";
 import Button from "../../common/Button/Button";
+import { formatPrice } from "../../../utils/formatPrice";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import { useState, useEffect } from "react";
 
@@ -72,10 +73,10 @@ function ProductDetails({ product }) {
           </div>
 
           <div className="product-price">
-            <span className="new-price">{product.newPrice}</span>
+            <span className="new-price">{formatPrice(product.newPrice)}</span>
 
             {product.oldPrice && (
-              <span className="old-price">{product.oldPrice}</span>
+              <span className="old-price">{product.oldPrice && formatPrice(product.oldPrice)}</span>
             )}
           </div>
 

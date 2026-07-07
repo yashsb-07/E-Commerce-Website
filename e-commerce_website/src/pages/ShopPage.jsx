@@ -5,10 +5,10 @@ import FilterSidebar from "../components/shop/FilterSidebar/FilterSidebar";
 import ShopToolbar from "../components/shop/ShopToolbar/ShopToolbar";
 import ProductGrid from "../components/shop/ProductGrid/ProductGrid";
 
-import { featuredProducts, newArrivals } from "../data/products";
+import { products } from "../data/products";
 
 function ShopPage() {
-  const allProducts = [...featuredProducts, ...newArrivals];
+  const allProducts = products;
 
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("default");
@@ -16,9 +16,7 @@ function ShopPage() {
   const [selectedPriceRange, setSelectedPriceRange] = useState("All");
 
   let filteredProducts = allProducts.filter((product) => {
-    const productPrice = parseInt(
-      product.newPrice.replace(/[₹,]/g, "")
-    );
+    const productPrice = product.newPrice;
 
     const matchesCategory =
       selectedCategory === "All" ||
@@ -47,17 +45,13 @@ function ShopPage() {
 
   if (sortOption === "low-high") {
     filteredProducts.sort(
-      (a, b) =>
-        parseInt(a.newPrice.replace(/[₹,]/g, "")) -
-        parseInt(b.newPrice.replace(/[₹,]/g, ""))
+      (a, b) => a.newPrice - b.newPrice
     );
   }
 
   if (sortOption === "high-low") {
     filteredProducts.sort(
-      (a, b) =>
-        parseInt(b.newPrice.replace(/[₹,]/g, "")) -
-        parseInt(a.newPrice.replace(/[₹,]/g, ""))
+      (a, b) => b.newPrice - a.newPrice
     );
   }
 

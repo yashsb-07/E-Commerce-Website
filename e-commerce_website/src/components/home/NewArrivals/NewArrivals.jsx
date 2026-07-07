@@ -1,8 +1,13 @@
 import "./NewArrivals.css";
 import ProductCard from "../../common/ProductCard/ProductCard";
-import { newArrivals } from "../../../data/products";
+import { products } from "../../../data/products";
 
 function NewArrivals() {
+
+  const newArrivals = products.filter(
+    (product) => product.newArrival
+  );
+
   return (
     <section className="new-arrivals">
       <div className="container">

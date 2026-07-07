@@ -1,5 +1,6 @@
 import "./ProductCard.css";
 import Button from "../Button/Button";
+import { formatPrice } from "../../../utils/formatPrice";
 import { useNavigate } from "react-router-dom";
 import {
   FaHeart,
@@ -76,10 +77,10 @@ function ProductCard({
 
         {/* Price */}
         <div className="product-price">
-          <span className="new-price">{newPrice}</span>
+          <span className="new-price">{formatPrice(newPrice)}</span>
 
           {oldPrice && (
-            <span className="old-price">{oldPrice}</span>
+            <span className="old-price">{oldPrice && formatPrice(oldPrice)}</span>
           )}
         </div>
 

@@ -1,4 +1,5 @@
 import "./ProductDescription.css";
+import { formatPrice } from "../../../utils/formatPrice";
 
 function ProductDescription({ product }) {
   return (
@@ -45,7 +46,7 @@ function ProductDescription({ product }) {
             </div>
 
             <div>
-              <strong>Price:</strong> {product.newPrice}
+              <strong>Price:</strong> {formatPrice(product.newPrice)}
             </div>
 
             <div>

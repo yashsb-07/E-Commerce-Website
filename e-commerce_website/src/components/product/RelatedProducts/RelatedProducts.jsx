@@ -1,8 +1,13 @@
 import "./RelatedProducts.css";
 import ProductCard from "../../common/ProductCard/ProductCard";
-import { featuredProducts } from "../../../data/products";
+import { products } from "../../../data/products";
 
 function RelatedProducts() {
+
+  const relatedProducts = products.filter(
+    (product) => product.featured
+  );
+
   return (
     <section className="related-products">
       <div className="container">
@@ -13,7 +18,7 @@ function RelatedProducts() {
         </div>
 
         <div className="related-products-grid">
-          {featuredProducts.slice(0, 4).map((product) => (
+          {relatedProducts.slice(0, 4).map((product) => (
             <ProductCard
               id={product.id} 
               key={product.id}

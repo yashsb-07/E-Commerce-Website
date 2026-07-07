@@ -1,8 +1,13 @@
 import "./FeaturedProducts.css";
 import ProductCard from "../../common/ProductCard/ProductCard";
-import { featuredProducts } from "../../../data/products";
+import { products } from "../../../data/products";
 
 function FeaturedProducts() {
+
+  const featuredProducts = products.filter(
+    (product) => product.featured
+  );
+
   return (
     <section className="featured-products">
       <div className="container">
