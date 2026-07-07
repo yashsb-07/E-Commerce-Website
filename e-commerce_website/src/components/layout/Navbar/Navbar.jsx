@@ -22,7 +22,15 @@ function Navbar() {
         {/* Icons */}
         <div className="nav-icons">
           <FaSearch />
-          <Link to="/cart"><FaShoppingCart /></Link>
+          <div className="cart-icon-wrapper">
+            <Link to="/cart">
+              <FaShoppingCart />
+            </Link>
+
+            <span className="cart-badge">
+              0
+            </span>
+          </div>
           <Link to="/profile"><FaUser /></Link>
           <FaBars className="menu-toggle" />
         </div>
