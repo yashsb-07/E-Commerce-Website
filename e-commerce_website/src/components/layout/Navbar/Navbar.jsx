@@ -5,12 +5,7 @@ import { useCart } from "../../../hooks/useCart";
 
 function Navbar() {
 
-  const { cart } = useCart();
-
-  const cartCount = cart.reduce(
-    (total, item) => total + item.quantity,
-    0
-  );
+  const { totalItems } = useCart();
 
   return (
     <nav className="navbar">
@@ -36,11 +31,11 @@ function Navbar() {
               <FaShoppingCart />
             </Link>
 
-            {cartCount > 0 && (
-            <span className="cart-badge">
-              {cartCount}
-            </span>
-          )}
+            {totalItems > 0 && (
+              <span className="cart-badge">
+                {totalItems}
+              </span>
+            )}
           </div>
           <Link to="/profile"><FaUser /></Link>
           <FaBars className="menu-toggle" />

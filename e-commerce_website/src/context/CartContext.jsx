@@ -41,8 +41,24 @@ export function CartProvider({ children }) {
     });
   };
 
+  const totalItems = cart.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
+  const subtotal = cart.reduce(
+    (total, item) => total + item.newPrice * item.quantity,
+    0
+  );
+
+  const isCartEmpty = cart.length === 0;
+
   const value = {
     cart,
+
+    totalItems,
+    subtotal,
+    isCartEmpty,
 
     addToCart,
     removeFromCart,
