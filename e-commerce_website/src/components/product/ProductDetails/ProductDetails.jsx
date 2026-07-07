@@ -3,6 +3,8 @@ import Button from "../../common/Button/Button";
 import { formatPrice } from "../../../utils/formatPrice";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import { useCart } from "../../../hooks/useCart";
+import { CART_ACTIONS } from "../../../reducers/cartReducer";
 
 function ProductDetails({ product }) {
   const [selectedImage, setSelectedImage] = useState(
@@ -10,6 +12,8 @@ function ProductDetails({ product }) {
   );
 
   const [quantity, setQuantity] = useState(1);
+
+  const { dispatch } = useCart();
 
   useEffect(() => {
     setSelectedImage(product.images[0]);
@@ -19,6 +23,13 @@ function ProductDetails({ product }) {
   const rating = Math.floor(product.rating);
   const fullStars = rating;
   const emptyStars = 5 - fullStars;
+
+  const handleAddToCart = () => {
+    dispatch({
+      type: CART_ACTIONS.ADD_TO_CART,
+      payload: product,
+    });
+  };
 
   return (
     <section className="product-details">
@@ -119,7 +130,7 @@ function ProductDetails({ product }) {
           </div>
 
           <div className="product-buttons">
-            <Button text="Add to Cart" />
+            <Button text="Add to Cart" onClick={handleAddToCart} />
             <Button text="Buy Now" className="btn-outline" />
           </div>
 
