@@ -16,13 +16,13 @@
 }
 
 .cart-items {
-    background: #fff;
+    background: #ffffff;
     border-radius: 10px;
     min-height: 400px;
 }
 
 .cart-summary {
-    background: #fff;
+    background: #ffffff;
     border-radius: 10px;
     min-height: 300px;
     position: sticky;
