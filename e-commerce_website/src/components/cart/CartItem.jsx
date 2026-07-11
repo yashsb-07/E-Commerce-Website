@@ -1,7 +1,14 @@
 import "./Cart.css";
 import { formatPrice } from "../../utils/formatPrice";
+import { useCart } from "../../hooks/useCart";
 
 const CartItem = ({ item }) => {
+    const {
+        increaseQuantity,
+        decreaseQuantity,
+        removeFromCart,
+    } = useCart();
+
     return (
         <div className="cart-item">
             <div className="cart-item-image">
@@ -19,11 +26,19 @@ const CartItem = ({ item }) => {
                 </p>
 
                 <div className="cart-quantity">
-                    <button>-</button>
+                    <button
+                        onClick={() => decreaseQuantity(item.id)}
+                    >
+                        -
+                    </button>
 
                     <span>{item.quantity}</span>
 
-                    <button>+</button>
+                    <button
+                        onClick={() => increaseQuantity(item.id)}
+                    >
+                        +
+                    </button>
                 </div>
             </div>
 
@@ -32,7 +47,10 @@ const CartItem = ({ item }) => {
                     Subtotal: {formatPrice(item.newPrice * item.quantity)}
                 </p>
 
-                <button className="remove-btn">
+                <button
+                    className="remove-btn"
+                    onClick={() => removeFromCart(item.id)}
+                >
                     Remove
                 </button>
             </div>
