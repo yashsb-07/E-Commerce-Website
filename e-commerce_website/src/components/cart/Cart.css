@@ -105,3 +105,56 @@
         text-align: left;
     }
 }
+
+.summary-card {
+    padding: 24px;
+}
+
+.summary-card h2 {
+    margin-bottom: 24px;
+    font-size: 1.5rem;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.summary-total {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 16px;
+}
+
+.summary-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.summary-btn {
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.primary-btn {
+    background-color: #000;
+    color: #fff;
+}
+
+.secondary-btn {
+    background-color: #f3f3f3;
+    color: #000;
+}
+
+.danger-btn {
+    background-color: #dc3545;
+    color: #fff;
+}

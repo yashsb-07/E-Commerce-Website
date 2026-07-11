@@ -1,6 +1,7 @@
 import "../components/cart/Cart.css";
 import CartItem from "../components/cart/CartItem";
 import { useCart } from "../hooks/useCart";
+import CartSummary from "../components/cart/CartSummary";
 
 const Cart = () => {
     const { cart } = useCart();
@@ -21,7 +22,7 @@ const Cart = () => {
                     </div>
 
                     <div className="cart-summary">
-                        {/* Order Summary will be built later */}
+                        <CartSummary />
                     </div>
                 </div>
             </div>
