@@ -1,4 +1,5 @@
 import "../components/cart/Cart.css";
+import CartItem from "../components/cart/CartItem";
 
 const Cart = () => {
     return (
@@ -8,7 +9,7 @@ const Cart = () => {
 
                 <div className="cart-container">
                     <div className="cart-items">
-                        {/* Cart items will be added in the next steps */}
+                        <CartItem />
                     </div>
 
                     <div className="cart-summary">
