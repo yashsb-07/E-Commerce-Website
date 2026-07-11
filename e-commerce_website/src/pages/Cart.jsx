@@ -1,7 +1,10 @@
 import "../components/cart/Cart.css";
 import CartItem from "../components/cart/CartItem";
+import { useCart } from "../hooks/useCart";
 
 const Cart = () => {
+    const { cart } = useCart();
+
     return (
         <section className="cart-page">
             <div className="container">
@@ -9,11 +12,16 @@ const Cart = () => {
 
                 <div className="cart-container">
                     <div className="cart-items">
-                        <CartItem />
+                        {cart.map((item) => (
+                            <CartItem
+                                key={item.id}
+                                item={item}
+                            />
+                        ))}
                     </div>
 
                     <div className="cart-summary">
-                        {/* Order summary will be added later */}
+                        {/* Order Summary will be built later */}
                     </div>
                 </div>
             </div>

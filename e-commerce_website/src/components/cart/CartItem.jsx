@@ -1,30 +1,35 @@
 import "./Cart.css";
+import { formatPrice } from "../../utils/formatPrice";
 
-const CartItem = () => {
+const CartItem = ({ item }) => {
     return (
         <div className="cart-item">
             <div className="cart-item-image">
                 <img
-                    src="https://images.pexels.com/photos/707046/pexels-photo-707046.jpeg"
-                    alt="Product"
+                    src={item.image}
+                    alt={item.name}
                 />
             </div>
 
             <div className="cart-item-details">
-                <h3>Sample Product</h3>
+                <h3>{item.name}</h3>
 
-                <p className="cart-item-price">$99.99</p>
+                <p className="cart-item-newPrice">
+                    {formatPrice(item.newPrice)}
+                </p>
 
                 <div className="cart-quantity">
                     <button>-</button>
-                    <span>1</span>
+
+                    <span>{item.quantity}</span>
+
                     <button>+</button>
                 </div>
             </div>
 
             <div className="cart-item-actions">
                 <p className="cart-item-subtotal">
-                    Subtotal: $99.99
+                    Subtotal: {formatPrice(item.newPrice * item.quantity)}
                 </p>
 
                 <button className="remove-btn">
