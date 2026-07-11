@@ -2,6 +2,7 @@ import "./Cart.css";
 import { Link } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
 import { formatPrice } from "../../utils/formatPrice";
+import Button from "../common/Button/Button";
 
 const DELIVERY_CHARGE = 49;
 
@@ -45,16 +46,16 @@ const CartSummary = () => {
                     Continue Shopping
                 </Link>
 
-                <button className="summary-btn primary-btn">
-                    Proceed to Checkout
-                </button>
+                <Button
+                    text="Proceed to Checkout"
+                    className="summary-btn primary-btn"
+                />
 
-                <button
-                    className="summary-btn danger-btn"
+                <Button
+                    text="Clear Cart"
                     onClick={clearCart}
-                >
-                    Clear Cart
-                </button>
+                    className="summary-btn danger-btn"
+                />
             </div>
         </div>
     );
