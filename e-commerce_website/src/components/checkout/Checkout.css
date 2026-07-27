@@ -161,3 +161,24 @@
         grid-column: auto;
     }
 }
+
+/* Shipping Information */
+
+.checkout-section + .checkout-section {
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.optional-label {
+    color: #777;
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+@media (max-width: 576px) {
+    .checkout-section + .checkout-section {
+        margin-top: 30px;
+        padding-top: 30px;
+    }
+}

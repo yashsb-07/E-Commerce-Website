@@ -1,4 +1,5 @@
 import CustomerInformation from "../components/checkout/CustomerInformation";
+import ShippingInformation from "../components/checkout/ShippingInformation";
 import "../components/checkout/Checkout.css";
 
 const Checkout = () => {
@@ -16,6 +17,8 @@ const Checkout = () => {
                 <div className="checkout-container">
                     <div className="checkout-main">
                         <CustomerInformation />
+
+                        <ShippingInformation />
                     </div>
 
                     <aside className="checkout-summary">
