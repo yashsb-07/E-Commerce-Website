@@ -1,3 +1,4 @@
+import CustomerInformation from "../components/checkout/CustomerInformation";
 import "../components/checkout/Checkout.css";
 
 const Checkout = () => {
@@ -14,11 +15,7 @@ const Checkout = () => {
 
                 <div className="checkout-container">
                     <div className="checkout-main">
-                        <h2>Checkout Information</h2>
-
-                        <p>
-                            Customer information will be added here.
-                        </p>
+                        <CustomerInformation />
                     </div>
 
                     <aside className="checkout-summary">

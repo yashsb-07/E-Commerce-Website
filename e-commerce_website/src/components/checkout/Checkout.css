@@ -87,3 +87,77 @@
         padding: 20px;
     }
 }
+
+/* Customer Information */
+
+.checkout-section-header {
+    margin-bottom: 30px;
+}
+
+.checkout-section-header h2 {
+    margin-bottom: 8px;
+}
+
+.checkout-section-header p {
+    max-width: 600px;
+}
+
+.checkout-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.checkout-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.checkout-form-group-full {
+    grid-column: 1 / -1;
+}
+
+.checkout-form-group label {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.checkout-form-group input {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 14px;
+    font: inherit;
+    color: #222;
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    border-radius: 7px;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.checkout-form-group input::placeholder {
+    color: #999;
+}
+
+.checkout-form-group input:hover {
+    border-color: #b5b5b5;
+}
+
+.checkout-form-group input:focus {
+    border-color: #333;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 576px) {
+    .checkout-form-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .checkout-form-group-full {
+        grid-column: auto;
+    }
+}
