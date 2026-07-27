@@ -1,5 +1,5 @@
 import "./Cart.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
 import { formatPrice } from "../../utils/formatPrice";
 import Button from "../common/Button/Button";
@@ -7,6 +7,8 @@ import Button from "../common/Button/Button";
 const DELIVERY_CHARGE = 49;
 
 const CartSummary = () => {
+    const navigate = useNavigate();
+
     const {
         totalItems,
         subtotal,
@@ -14,6 +16,10 @@ const CartSummary = () => {
     } = useCart();
 
     const totalAmount = subtotal + DELIVERY_CHARGE;
+
+    const handleCheckout = () => {
+        navigate("/checkout");
+    };
 
     return (
         <div className="summary-card">
@@ -46,16 +52,17 @@ const CartSummary = () => {
                     Continue Shopping
                 </Link>
 
-                <button className="summary-btn primary-btn">
-                    Proceed to Checkout
-                </button>
+                <Button
+                    text="Proceed to Checkout"
+                    className="summary-btn primary-btn"
+                    onClick={handleCheckout}
+                />
 
-                <button
+                <Button
+                    text="Clear Cart"
                     className="summary-btn danger-btn"
                     onClick={clearCart}
-                >
-                    Clear Cart
-                </button>
+                />
             </div>
         </div>
     );
