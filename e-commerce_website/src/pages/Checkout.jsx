@@ -1,5 +1,6 @@
 import CustomerInformation from "../components/checkout/CustomerInformation";
 import ShippingInformation from "../components/checkout/ShippingInformation";
+import CheckoutOrderSummary from "../components/checkout/CheckoutOrderSummary";
 import "../components/checkout/Checkout.css";
 
 const Checkout = () => {
@@ -22,11 +23,7 @@ const Checkout = () => {
                     </div>
 
                     <aside className="checkout-summary">
-                        <h2>Order Summary</h2>
-
-                        <p>
-                            Your order details will be added here.
-                        </p>
+                        <CheckoutOrderSummary />
                     </aside>
                 </div>
             </div>
