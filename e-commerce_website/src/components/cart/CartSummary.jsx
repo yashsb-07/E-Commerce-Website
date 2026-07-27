@@ -46,16 +46,16 @@ const CartSummary = () => {
                     Continue Shopping
                 </Link>
 
-                <Button
-                    text="Proceed to Checkout"
-                    className="summary-btn primary-btn"
-                />
+                <button className="summary-btn primary-btn">
+                    Proceed to Checkout
+                </button>
 
-                <Button
-                    text="Clear Cart"
-                    onClick={clearCart}
+                <button
                     className="summary-btn danger-btn"
-                />
+                    onClick={clearCart}
+                >
+                    Clear Cart
+                </button>
             </div>
         </div>
     );
