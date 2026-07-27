@@ -1,9 +1,12 @@
 import "./ProductDetails.css";
-import Button from "../../common/Button/Button";
-import { formatPrice } from "../../../utils/formatPrice";
+
+import { useState } from "react";
 import { FaStar, FaRegStar } from "react-icons/fa";
-import { useState, useEffect } from "react";
+
+import Button from "../../common/Button/Button";
+
 import { useCart } from "../../../hooks/useCart";
+import { formatPrice } from "../../../utils/formatPrice";
 
 function ProductDetails({ product }) {
   const [selectedImage, setSelectedImage] = useState(
@@ -13,11 +16,6 @@ function ProductDetails({ product }) {
   const [quantity, setQuantity] = useState(1);
 
   const { addToCart } = useCart();
-
-  useEffect(() => {
-    setSelectedImage(product.images[0]);
-    setQuantity(1);
-  }, [product]);
 
   const rating = Math.floor(product.rating);
   const fullStars = rating;
@@ -36,7 +34,10 @@ function ProductDetails({ product }) {
 
           {/* Main Image */}
           <div className="main-product-image">
-            <img src={selectedImage} alt={product.title} />
+            <img
+              src={selectedImage}
+              alt={product.title}
+            />
           </div>
 
           {/* Thumbnails */}
@@ -47,7 +48,9 @@ function ProductDetails({ product }) {
                 src={img}
                 alt={product.title}
                 className={`thumbnail ${
-                  selectedImage === img ? "active-thumbnail" : ""
+                  selectedImage === img
+                    ? "active-thumbnail"
+                    : ""
                 }`}
                 onClick={() => setSelectedImage(img)}
               />
@@ -59,9 +62,13 @@ function ProductDetails({ product }) {
         {/* Right Side */}
         <div className="product-info-section">
 
-          <p className="product-category">{product.category}</p>
+          <p className="product-category">
+            {product.category}
+          </p>
 
-          <h1 className="product-title">{product.title}</h1>
+          <h1 className="product-title">
+            {product.title}
+          </h1>
 
           <div className="product-rating">
             <div className="stars">
@@ -80,10 +87,14 @@ function ProductDetails({ product }) {
           </div>
 
           <div className="product-price">
-            <span className="new-price">{formatPrice(product.newPrice)}</span>
+            <span className="new-price">
+              {formatPrice(product.newPrice)}
+            </span>
 
             {product.oldPrice && (
-              <span className="old-price">{product.oldPrice && formatPrice(product.oldPrice)}</span>
+              <span className="old-price">
+                {formatPrice(product.oldPrice)}
+              </span>
             )}
           </div>
 
@@ -104,10 +115,11 @@ function ProductDetails({ product }) {
           </p>
 
           <div className="quantity-selector">
-
             <button
               onClick={() =>
-                setQuantity((prev) => Math.max(1, prev - 1))
+                setQuantity((prev) =>
+                  Math.max(1, prev - 1)
+                )
               }
             >
               -
@@ -122,12 +134,18 @@ function ProductDetails({ product }) {
             >
               +
             </button>
-
           </div>
 
           <div className="product-buttons">
-            <Button text="Add to Cart" onClick={handleAddToCart} />
-            <Button text="Buy Now" className="btn-outline" />
+            <Button
+              text="Add to Cart"
+              onClick={handleAddToCart}
+            />
+
+            <Button
+              text="Buy Now"
+              className="btn-outline"
+            />
           </div>
 
         </div>

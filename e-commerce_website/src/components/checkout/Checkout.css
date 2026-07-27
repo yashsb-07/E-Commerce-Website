@@ -371,3 +371,133 @@
     outline: 3px solid rgba(17, 17, 17, 0.25);
     outline-offset: 3px;
 }
+
+/* Checkout Final Polish */
+
+.checkout-main,
+.checkout-summary {
+    min-width: 0;
+}
+
+.checkout-summary {
+    overflow: hidden;
+}
+
+.checkout-summary-item-details h3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.checkout-submit {
+    margin-top: 28px;
+}
+
+.checkout-submit .checkout-place-order-btn {
+    margin-top: 0;
+}
+
+.checkout-submit-note {
+    margin: 12px 0 0;
+    color: #777;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Large tablets */
+
+@media (max-width: 992px) {
+    .checkout-container {
+        gap: 24px;
+    }
+
+    .checkout-main,
+    .checkout-summary {
+        width: 100%;
+    }
+}
+
+/* Tablets */
+
+@media (max-width: 768px) {
+    .checkout-page {
+        padding: 45px 0;
+    }
+
+    .checkout-header {
+        margin-bottom: 30px;
+    }
+
+    .checkout-main,
+    .checkout-summary {
+        padding: 24px;
+    }
+
+    .checkout-section-header {
+        margin-bottom: 24px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 576px) {
+    .checkout-page {
+        padding: 32px 0;
+    }
+
+    .checkout-header {
+        margin-bottom: 24px;
+    }
+
+    .checkout-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .checkout-main,
+    .checkout-summary {
+        padding: 18px;
+        border-radius: 8px;
+    }
+
+    .checkout-form-group input {
+        min-height: 50px;
+    }
+
+    .checkout-summary-header {
+        align-items: flex-start;
+    }
+
+    .checkout-summary-item-details h3 {
+        white-space: normal;
+    }
+
+    .checkout-place-order-btn {
+        min-height: 50px;
+    }
+}
+
+/* Small mobile */
+
+@media (max-width: 375px) {
+    .checkout-main,
+    .checkout-summary {
+        padding: 16px;
+    }
+
+    .checkout-summary-header {
+        gap: 10px;
+    }
+
+    .checkout-summary-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .checkout-summary-row {
+        gap: 12px;
+    }
+
+    .checkout-summary-total {
+        font-size: 1rem;
+    }
+}

@@ -23,7 +23,7 @@ function ProductPage() {
   return (
     <>
       <ProductBreadcrumb product={product} />
-      <ProductDetails product={product} />
+      <ProductDetails key={product.id} product={product} />
       <ProductDescription product={product} />
       <RelatedProducts />
     </>

@@ -167,12 +167,19 @@ const Checkout = () => {
                     <aside className="checkout-summary">
                         <CheckoutOrderSummary />
 
-                        <button
-                            type="submit"
-                            className="checkout-place-order-btn"
-                        >
-                            Place Order
-                        </button>
+                        <div className="checkout-submit">
+                            <button
+                                type="submit"
+                                className="checkout-place-order-btn"
+                            >
+                                Place Order
+                            </button>
+
+                            <p className="checkout-submit-note">
+                                Your information is used only to complete this
+                                checkout demo.
+                            </p>
+                        </div>
                     </aside>
                 </form>
             </div>
