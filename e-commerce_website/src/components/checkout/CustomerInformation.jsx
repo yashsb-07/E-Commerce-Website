@@ -1,22 +1,8 @@
-import { useState } from "react";
-
-const CustomerInformation = () => {
-    const [customerInfo, setCustomerInfo] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-    });
-
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-
-        setCustomerInfo((prevCustomerInfo) => ({
-            ...prevCustomerInfo,
-            [name]: value,
-        }));
-    };
-
+const CustomerInformation = ({
+    customerInfo,
+    errors,
+    onChange,
+}) => {
     return (
         <div className="checkout-section">
             <div className="checkout-section-header">
@@ -39,10 +25,26 @@ const CustomerInformation = () => {
                         id="firstName"
                         name="firstName"
                         value={customerInfo.firstName}
-                        onChange={handleChange}
+                        onChange={onChange}
                         placeholder="Enter your first name"
                         autoComplete="given-name"
+                        className={errors.firstName ? "input-error" : ""}
+                        aria-invalid={Boolean(errors.firstName)}
+                        aria-describedby={
+                            errors.firstName
+                                ? "firstName-error"
+                                : undefined
+                        }
                     />
+
+                    {errors.firstName && (
+                        <p
+                            className="checkout-error"
+                            id="firstName-error"
+                        >
+                            {errors.firstName}
+                        </p>
+                    )}
                 </div>
 
                 <div className="checkout-form-group">
@@ -55,10 +57,26 @@ const CustomerInformation = () => {
                         id="lastName"
                         name="lastName"
                         value={customerInfo.lastName}
-                        onChange={handleChange}
+                        onChange={onChange}
                         placeholder="Enter your last name"
                         autoComplete="family-name"
+                        className={errors.lastName ? "input-error" : ""}
+                        aria-invalid={Boolean(errors.lastName)}
+                        aria-describedby={
+                            errors.lastName
+                                ? "lastName-error"
+                                : undefined
+                        }
                     />
+
+                    {errors.lastName && (
+                        <p
+                            className="checkout-error"
+                            id="lastName-error"
+                        >
+                            {errors.lastName}
+                        </p>
+                    )}
                 </div>
 
                 <div className="checkout-form-group checkout-form-group-full">
@@ -71,10 +89,26 @@ const CustomerInformation = () => {
                         id="email"
                         name="email"
                         value={customerInfo.email}
-                        onChange={handleChange}
+                        onChange={onChange}
                         placeholder="Enter your email address"
                         autoComplete="email"
+                        className={errors.email ? "input-error" : ""}
+                        aria-invalid={Boolean(errors.email)}
+                        aria-describedby={
+                            errors.email
+                                ? "email-error"
+                                : undefined
+                        }
                     />
+
+                    {errors.email && (
+                        <p
+                            className="checkout-error"
+                            id="email-error"
+                        >
+                            {errors.email}
+                        </p>
+                    )}
                 </div>
 
                 <div className="checkout-form-group checkout-form-group-full">
@@ -87,10 +121,26 @@ const CustomerInformation = () => {
                         id="phone"
                         name="phone"
                         value={customerInfo.phone}
-                        onChange={handleChange}
+                        onChange={onChange}
                         placeholder="Enter your phone number"
                         autoComplete="tel"
+                        className={errors.phone ? "input-error" : ""}
+                        aria-invalid={Boolean(errors.phone)}
+                        aria-describedby={
+                            errors.phone
+                                ? "phone-error"
+                                : undefined
+                        }
                     />
+
+                    {errors.phone && (
+                        <p
+                            className="checkout-error"
+                            id="phone-error"
+                        >
+                            {errors.phone}
+                        </p>
+                    )}
                 </div>
             </div>
         </div>

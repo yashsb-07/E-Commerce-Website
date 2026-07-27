@@ -1,24 +1,8 @@
-import { useState } from "react";
-
-const ShippingInformation = () => {
-    const [shippingInfo, setShippingInfo] = useState({
-        address: "",
-        apartment: "",
-        city: "",
-        state: "",
-        postalCode: "",
-        country: "",
-    });
-
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-
-        setShippingInfo((prevShippingInfo) => ({
-            ...prevShippingInfo,
-            [name]: value,
-        }));
-    };
-
+const ShippingInformation = ({
+    shippingInfo,
+    errors,
+    onChange,
+}) => {
     return (
         <div className="checkout-section">
             <div className="checkout-section-header">
@@ -41,10 +25,26 @@ const ShippingInformation = () => {
                         id="address"
                         name="address"
                         value={shippingInfo.address}
-                        onChange={handleChange}
+                        onChange={onChange}
                         placeholder="Enter your street address"
                         autoComplete="street-address"
+                        className={errors.address ? "input-error" : ""}
+                        aria-invalid={Boolean(errors.address)}
+                        aria-describedby={
+                            errors.address
+                                ? "address-error"
+                                : undefined
+                        }
                     />
+
+                    {errors.address && (
+                        <p
+                            className="checkout-error"
+                            id="address-error"
+                        >
+                            {errors.address}
+                        </p>
+                    )}
                 </div>
 
                 <div className="checkout-form-group checkout-form-group-full">
@@ -60,7 +60,7 @@ const ShippingInformation = () => {
                         id="apartment"
                         name="apartment"
                         value={shippingInfo.apartment}
-                        onChange={handleChange}
+                        onChange={onChange}
                         placeholder="Apartment, suite, unit, etc."
                         autoComplete="address-line2"
                     />
@@ -76,10 +76,26 @@ const ShippingInformation = () => {
                         id="city"
                         name="city"
                         value={shippingInfo.city}
-                        onChange={handleChange}
+                        onChange={onChange}
                         placeholder="Enter your city"
                         autoComplete="address-level2"
+                        className={errors.city ? "input-error" : ""}
+                        aria-invalid={Boolean(errors.city)}
+                        aria-describedby={
+                            errors.city
+                                ? "city-error"
+                                : undefined
+                        }
                     />
+
+                    {errors.city && (
+                        <p
+                            className="checkout-error"
+                            id="city-error"
+                        >
+                            {errors.city}
+                        </p>
+                    )}
                 </div>
 
                 <div className="checkout-form-group">
@@ -92,10 +108,26 @@ const ShippingInformation = () => {
                         id="state"
                         name="state"
                         value={shippingInfo.state}
-                        onChange={handleChange}
+                        onChange={onChange}
                         placeholder="Enter your state"
                         autoComplete="address-level1"
+                        className={errors.state ? "input-error" : ""}
+                        aria-invalid={Boolean(errors.state)}
+                        aria-describedby={
+                            errors.state
+                                ? "state-error"
+                                : undefined
+                        }
                     />
+
+                    {errors.state && (
+                        <p
+                            className="checkout-error"
+                            id="state-error"
+                        >
+                            {errors.state}
+                        </p>
+                    )}
                 </div>
 
                 <div className="checkout-form-group">
@@ -108,11 +140,27 @@ const ShippingInformation = () => {
                         id="postalCode"
                         name="postalCode"
                         value={shippingInfo.postalCode}
-                        onChange={handleChange}
+                        onChange={onChange}
                         placeholder="Enter postal code"
                         autoComplete="postal-code"
                         inputMode="numeric"
+                        className={errors.postalCode ? "input-error" : ""}
+                        aria-invalid={Boolean(errors.postalCode)}
+                        aria-describedby={
+                            errors.postalCode
+                                ? "postalCode-error"
+                                : undefined
+                        }
                     />
+
+                    {errors.postalCode && (
+                        <p
+                            className="checkout-error"
+                            id="postalCode-error"
+                        >
+                            {errors.postalCode}
+                        </p>
+                    )}
                 </div>
 
                 <div className="checkout-form-group">
@@ -125,10 +173,26 @@ const ShippingInformation = () => {
                         id="country"
                         name="country"
                         value={shippingInfo.country}
-                        onChange={handleChange}
+                        onChange={onChange}
                         placeholder="Enter your country"
                         autoComplete="country-name"
+                        className={errors.country ? "input-error" : ""}
+                        aria-invalid={Boolean(errors.country)}
+                        aria-describedby={
+                            errors.country
+                                ? "country-error"
+                                : undefined
+                        }
                     />
+
+                    {errors.country && (
+                        <p
+                            className="checkout-error"
+                            id="country-error"
+                        >
+                            {errors.country}
+                        </p>
+                    )}
                 </div>
             </div>
         </div>

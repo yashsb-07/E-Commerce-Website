@@ -319,3 +319,55 @@
         grid-column: 2;
     }
 }
+
+/* Checkout Validation */
+
+.checkout-form-group input.input-error {
+    border-color: #dc3545;
+}
+
+.checkout-form-group input.input-error:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.12);
+}
+
+.checkout-error {
+    margin: 0;
+    color: #dc3545;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.checkout-place-order-btn {
+    width: 100%;
+    margin-top: 28px;
+    padding: 14px 20px;
+
+    color: #ffffff;
+    background: #111111;
+
+    border: none;
+    border-radius: 7px;
+
+    font: inherit;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.checkout-place-order-btn:hover {
+    background: #333333;
+}
+
+.checkout-place-order-btn:active {
+    transform: translateY(1px);
+}
+
+.checkout-place-order-btn:focus-visible {
+    outline: 3px solid rgba(17, 17, 17, 0.25);
+    outline-offset: 3px;
+}
