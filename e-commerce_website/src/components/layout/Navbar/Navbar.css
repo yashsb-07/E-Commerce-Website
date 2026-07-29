@@ -41,33 +41,47 @@
   align-items: center;
 }
 
+.wishlist-icon-wrapper,
 .cart-icon-wrapper {
   position: relative;
   display: flex;
   align-items: center;
 }
 
+.wishlist-icon-wrapper a,
+.cart-icon-wrapper a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wishlist-badge,
 .cart-badge {
   position: absolute;
   top: -8px;
   right: -10px;
 
-  width: 20px;
+  min-width: 20px;
   height: 20px;
 
-  border-radius: 50%;
+  padding: 0 4px;
+
+  border-radius: 999px;
 
   background: #ef4444;
   color: white;
 
   font-size: 11px;
   font-weight: 600;
+  line-height: 1;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   border: 2px solid white;
+
+  pointer-events: none;
 }
 
 .nav-icons svg {
